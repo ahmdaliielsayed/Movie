@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".moviedetails.presentation.ui.MovieDetailsFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/img_poster"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dimen_250"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:scaleType="centerCrop"
+            android:src="@drawable/error"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/txt_rating_and_release_year"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_16"
+            android:layout_marginBottom="@dimen/dimen_16"
+            android:background="@drawable/round_black_background"
+            android:paddingStart="@dimen/dimen_8"
+            android:paddingTop="@dimen/dimen_4"
+            android:paddingEnd="@dimen/dimen_8"
+            android:paddingBottom="@dimen/dimen_4"
+            android:textColor="@color/platinum"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/img_poster"
+            app:layout_constraintStart_toStartOf="@+id/img_poster"
+            tools:text="7.6 | 2023" />
+
+        <ImageView
+            android:id="@+id/img_favorite"
+            android:layout_width="@dimen/dimen_48"
+            android:layout_height="@dimen/dimen_48"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:layout_marginEnd="@dimen/dimen_16"
+            android:src="@drawable/empty_heart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_poster"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/txt_movie_language"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/dark"
+            android:textSize="@dimen/text_dimen_16"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/img_favorite"
+            app:layout_constraintStart_toStartOf="@+id/txt_rating_and_release_year"
+            app:layout_constraintTop_toTopOf="@+id/img_favorite"
+            tools:text="Language: US" />
+
+        <TextView
+            android:id="@+id/txt_movie_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:textAllCaps="true"
+            android:textColor="@color/dark"
+            android:textSize="@dimen/text_dimen_20"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/img_favorite"
+            app:layout_constraintStart_toStartOf="@+id/txt_rating_and_release_year"
+            app:layout_constraintTop_toBottomOf="@+id/img_favorite"
+            tools:text="Avatar: The Way Of Water" />
+
+        <TextView
+            android:id="@+id/txt_movie_overview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:textColor="@color/dark"
+            android:textSize="@dimen/text_dimen_16"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/txt_movie_title"
+            app:layout_constraintStart_toStartOf="@+id/txt_movie_title"
+            app:layout_constraintTop_toBottomOf="@+id/txt_movie_title"
+            tools:text="any text will be here as a description or overview for the movie" />
+
+        <TextView
+            android:id="@+id/txt_movie_vote_average"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_16"
+            android:textColor="@color/dark"
+            android:textSize="@dimen/text_dimen_16"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/txt_movie_vote_count"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_movie_overview"
+            tools:text="Vote Average: 7.6" />
+
+        <TextView
+            android:id="@+id/txt_movie_vote_count"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_16"
+            android:layout_marginEnd="@dimen/dimen_16"
+            android:textColor="@color/dark"
+            android:textSize="@dimen/text_dimen_16"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_movie_vote_average"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/txt_movie_vote_average"
+            app:layout_constraintTop_toTopOf="@+id/txt_movie_vote_average"
+            tools:text="Vote Count: 2015" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

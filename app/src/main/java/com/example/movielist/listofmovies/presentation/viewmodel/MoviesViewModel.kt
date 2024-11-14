@@ -6,6 +6,7 @@ import com.example.movielist.listofmovies.data.dto.Movie
 import com.example.movielist.listofmovies.domain.usecase.MoviesUseCase
 import com.example.movielist.listofmovies.domain.utils.onError
 import com.example.movielist.listofmovies.domain.utils.onSuccess
+import com.example.movielist.moviedetails.domain.MovieDetails
 import com.example.movielist.utils.SortOrder
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -54,4 +55,15 @@ class MoviesViewModel(
             }
         }
     }
+
+    fun getMovieDetails(movie: Movie) = MovieDetails(
+        id = movie.id,
+        originalLanguage = movie.originalLanguage,
+        overview = movie.overview,
+        posterPath = movie.backdropPath,
+        releaseDate = movie.releaseDate,
+        title = movie.title,
+        voteCount = movie.voteCount,
+        voteAverage = movie.voteAverage
+    )
 }

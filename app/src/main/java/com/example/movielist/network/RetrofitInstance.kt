@@ -1,4 +1,4 @@
-package com.example.movielist.listofmovies.data.network
+package com.example.movielist.network
 
 import com.example.movielist.utils.Constants.API_KEY
 import com.example.movielist.utils.Constants.BASE_URL

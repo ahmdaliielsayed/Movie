@@ -1,7 +1,7 @@
 package com.example.movielist.listofmovies.data.repository
 
 import com.example.movielist.listofmovies.data.dto.MovieResponse
-import com.example.movielist.listofmovies.data.network.RemoteDataSource
+import com.example.movielist.listofmovies.data.remote.RemoteDataSource
 import com.example.movielist.listofmovies.domain.repository.MoviesRepository
 import com.example.movielist.utils.SortOrder
 import retrofit2.Response

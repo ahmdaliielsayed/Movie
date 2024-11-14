@@ -2,7 +2,7 @@ package com.example.movielist.listofmovies.domain.usecase
 
 import com.example.movielist.listofmovies.data.dto.Movie
 import com.example.movielist.listofmovies.data.dto.MovieResponse
-import com.example.movielist.listofmovies.data.network.safeCall
+import com.example.movielist.network.safeCall
 import com.example.movielist.listofmovies.domain.repository.MoviesRepository
 import com.example.movielist.listofmovies.domain.utils.NetworkError
 import com.example.movielist.listofmovies.domain.utils.Result

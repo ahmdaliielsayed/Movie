@@ -10,6 +10,7 @@
 
     <color name="tool_bar_color">#6750A4</color>
     <color name="dark">#141A26</color>
+    <color name="dark_opacity">#CC141A26</color>
     <color name="fire_fly">#355862</color>
     <color name="white_lilac">#141A26</color>
     <color name="electric_violet">#8E00FE</color>

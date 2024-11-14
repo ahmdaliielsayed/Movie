@@ -1,6 +1,7 @@
-package com.example.movielist.listofmovies.data.network
+package com.example.movielist.listofmovies.data.remote
 
 import com.example.movielist.listofmovies.data.dto.MovieResponse
+import com.example.movielist.network.APIService
 import com.example.movielist.utils.SortOrder
 import retrofit2.Response
 

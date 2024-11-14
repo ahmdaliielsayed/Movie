@@ -8,7 +8,9 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.movielist.R
 import com.example.movielist.databinding.FragmentMoviesBinding
 import com.example.movielist.listofmovies.data.dto.Movie
 import com.example.movielist.listofmovies.presentation.viewmodel.MoviesViewModel
@@ -47,6 +49,7 @@ class MoviesFragment : Fragment() {
 
     private fun showToolbar() {
         (activity as AppCompatActivity).supportActionBar?.show()
+        (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.movies_screen)
     }
 
     private fun setupRecyclerView() {
@@ -67,7 +70,10 @@ class MoviesFragment : Fragment() {
     }
 
     private fun onMovieItemClick(movie: Movie) {
-        TODO("Not yet implemented")
+        val action = MoviesFragmentDirections.actionMoviesFragmentToMovieDetailsFragment(
+            viewModel.getMovieDetails(movie)
+        )
+        findNavController().navigate(action)
     }
 
     private fun addToFavoriteClick(movie: Movie) {

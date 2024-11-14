@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Movie List</string>
+    <string name="language">Language:</string>
+    <string name="vote_average">Vote Average:</string>
+    <string name="vote_count">Vote Count:</string>
+    <string name="movies_screen">Movies Screen</string>
+    <string name="details_screen">Details Screen</string>
 </resources>
