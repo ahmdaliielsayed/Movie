@@ -6,7 +6,9 @@ import com.example.movielist.domain.dto.Movie
 import com.example.movielist.domain.usecases.MoviesUseCase
 import com.example.movielist.data.remote.onError
 import com.example.movielist.data.remote.onSuccess
-import com.example.movielist.domain.dto.MovieDetails
+import com.example.movielist.domain.dto.MovieDetailsEntity
+import com.example.movielist.utils.Constants.NEGATIVE_ONE_LONG
+import com.example.movielist.utils.Constants.ZERO
 import com.example.movielist.utils.SortOrder
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -25,6 +27,23 @@ class MoviesViewModel(
 
     private val _isLoading = MutableStateFlow(false)
     val isLoading: StateFlow<Boolean> = _isLoading
+
+    private val _isInsertedSuccessfully = MutableStateFlow<Boolean?>(null)
+    val isInsertedSuccessfully: StateFlow<Boolean?> = _isInsertedSuccessfully
+
+    private val _isDeletedSuccessfully = MutableStateFlow<Boolean?>(null)
+    val isDeletedSuccessfully: StateFlow<Boolean?> = _isDeletedSuccessfully
+
+    private val _favoriteMovies = MutableStateFlow<List<MovieDetailsEntity>>(emptyList())
+
+    init {
+        viewModelScope.launch {
+            moviesUseCase.getAllFavoriteMovies().collect { favoriteMovies ->
+                _favoriteMovies.value = favoriteMovies
+                updateMoviesListWithFavorites()
+            }
+        }
+    }
 
     fun getMovies(
         releaseYear: Int? = null,
@@ -49,6 +68,7 @@ class MoviesViewModel(
                 _isLoading.value = false
                 _moviesList.value = it
                 _errorMessage.value = null
+                updateMoviesListWithFavorites()
             }.onError {
                 _isLoading.value = false
                 _errorMessage.value = it.name
@@ -56,7 +76,14 @@ class MoviesViewModel(
         }
     }
 
-    fun getMovieDetails(movie: Movie) = MovieDetails(
+    private fun updateMoviesListWithFavorites() {
+        _moviesList.value = _moviesList.value.map { movie ->
+            val isFavorite = _favoriteMovies.value.any { it.id == movie.id }
+            movie.copy(isFavorite = isFavorite)
+        }
+    }
+
+    fun getMovieDetails(movie: Movie) = MovieDetailsEntity(
         id = movie.id,
         originalLanguage = movie.originalLanguage,
         overview = movie.overview,
@@ -64,6 +91,31 @@ class MoviesViewModel(
         releaseDate = movie.releaseDate,
         title = movie.title,
         voteCount = movie.voteCount,
-        voteAverage = movie.voteAverage
+        voteAverage = movie.voteAverage,
+        isFavorite = movie.isFavorite
     )
+
+    fun insertMovie(movie: MovieDetailsEntity) {
+        viewModelScope.launch(Dispatchers.IO) {
+            val rowId = moviesUseCase.insertMovies(movie)
+
+            _isInsertedSuccessfully.value = rowId != NEGATIVE_ONE_LONG
+        }
+    }
+
+    fun removeMovie(movie: MovieDetailsEntity) {
+        viewModelScope.launch(Dispatchers.IO) {
+            val rows = moviesUseCase.removeMovie(movie)
+
+            _isDeletedSuccessfully.value = rows != ZERO
+        }
+    }
+
+    fun removeIsInsertedSuccessfullyValue() {
+        _isInsertedSuccessfully.value = null
+    }
+
+    fun removeIsDeletedSuccessfullyValue() {
+        _isDeletedSuccessfully.value = null
+    }
 }

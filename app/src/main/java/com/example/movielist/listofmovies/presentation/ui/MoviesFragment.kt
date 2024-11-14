@@ -59,6 +59,9 @@ class MoviesFragment : Fragment() {
             },
             addToFavorite = { movie ->
                 addToFavoriteClick(movie)
+            },
+            removeFromFavorite = { movie ->
+                removeFromFavoriteClick(movie)
             }
         )
         with(binding?.moviesRecyclerView) {
@@ -77,13 +80,19 @@ class MoviesFragment : Fragment() {
     }
 
     private fun addToFavoriteClick(movie: Movie) {
-        TODO("Not yet implemented")
+        viewModel.insertMovie(viewModel.getMovieDetails(movie))
+    }
+
+    private fun removeFromFavoriteClick(movie: Movie) {
+        viewModel.removeMovie(viewModel.getMovieDetails(movie))
     }
 
     private fun setupObservers() {
         collect(viewModel.moviesList, ::renderMovies)
         collect(viewModel.isLoading, ::modifyLoadingState)
         collect(viewModel.errorMessage, ::showError)
+        collect(viewModel.isInsertedSuccessfully, ::getInsertResult)
+        collect(viewModel.isDeletedSuccessfully, ::getDeleteResult)
     }
 
     private fun renderMovies(moviesList: List<Movie>?) {
@@ -97,8 +106,34 @@ class MoviesFragment : Fragment() {
 
     private fun showError(errorMsg: String?) {
         errorMsg?.let {
-            Toast.makeText(context, it, Toast.LENGTH_LONG).show()
+            Toast.makeText(context, it, Toast.LENGTH_SHORT).show()
             binding?.animationNoDataAvailable?.visibility = View.VISIBLE
         }
+    }
+
+    private fun getInsertResult(isSuccess: Boolean?) {
+        isSuccess?.let {
+            if (isSuccess == true) {
+                Toast.makeText(context, getString(R.string.inserted_successfully), Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(context, getString(R.string.insertion_failed), Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    private fun getDeleteResult(isSuccess: Boolean?) {
+        isSuccess?.let {
+            if (isSuccess == true) {
+                Toast.makeText(context, getString(R.string.deleted_successfully), Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(context, getString(R.string.deletion_failed), Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        viewModel.removeIsInsertedSuccessfullyValue()
+        viewModel.removeIsDeletedSuccessfullyValue()
     }
 }

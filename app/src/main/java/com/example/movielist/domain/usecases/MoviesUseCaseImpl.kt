@@ -7,7 +7,9 @@ import com.example.movielist.listofmovies.domain.repository.MoviesRepository
 import com.example.movielist.data.remote.NetworkError
 import com.example.movielist.data.remote.Result
 import com.example.movielist.data.remote.map
+import com.example.movielist.domain.dto.MovieDetailsEntity
 import com.example.movielist.utils.SortOrder
+import kotlinx.coroutines.flow.Flow
 
 class MoviesUseCaseImpl(
     private val moviesRepository: MoviesRepository
@@ -27,5 +29,17 @@ class MoviesUseCaseImpl(
         }.map { response ->
             response.moviesList?.filterNotNull() ?: emptyList()
         }
+    }
+
+    override suspend fun insertMovies(movie: MovieDetailsEntity): Long {
+        return moviesRepository.insertMovies(movie)
+    }
+
+    override suspend fun removeMovie(movie: MovieDetailsEntity): Int {
+        return moviesRepository.removeMovie(movie)
+    }
+
+    override fun getAllFavoriteMovies(): Flow<List<MovieDetailsEntity>> {
+        return moviesRepository.getAllFavoriteMovies()
     }
 }

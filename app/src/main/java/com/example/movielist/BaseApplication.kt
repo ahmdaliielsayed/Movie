@@ -2,7 +2,7 @@ package com.example.movielist
 
 import android.app.Application
 import com.example.movielist.di.localModules
-import com.example.movielist.di.networkModule
+import com.example.movielist.di.remoteModule
 import com.example.movielist.di.repositoriesModule
 import com.example.movielist.di.useCaseModules
 import com.example.movielist.di.viewModelsModule
@@ -32,7 +32,7 @@ class BaseApplication : Application() {
             androidContext(this@BaseApplication)
             modules(
                 listOf(
-                    networkModule,
+                    remoteModule,
                     localModules,
                     repositoriesModule,
                     useCaseModules,
