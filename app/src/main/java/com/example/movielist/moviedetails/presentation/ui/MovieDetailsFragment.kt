@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.example.movielist.R
 import com.example.movielist.databinding.FragmentMovieDetailsBinding
-import com.example.movielist.moviedetails.domain.MovieDetails
+import com.example.movielist.domain.dto.MovieDetails
 import com.example.movielist.utils.Constants.EMPTY
 import com.example.movielist.utils.Constants.SPACE
 import com.example.movielist.utils.loadImage

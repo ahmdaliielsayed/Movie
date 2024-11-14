@@ -1,12 +1,12 @@
-package com.example.movielist.listofmovies.domain.usecase
+package com.example.movielist.domain.usecases
 
-import com.example.movielist.listofmovies.data.dto.Movie
-import com.example.movielist.listofmovies.data.dto.MovieResponse
-import com.example.movielist.network.safeCall
+import com.example.movielist.domain.dto.Movie
+import com.example.movielist.domain.dto.MovieResponse
+import com.example.movielist.data.remote.safeCall
 import com.example.movielist.listofmovies.domain.repository.MoviesRepository
-import com.example.movielist.listofmovies.domain.utils.NetworkError
-import com.example.movielist.listofmovies.domain.utils.Result
-import com.example.movielist.listofmovies.domain.utils.map
+import com.example.movielist.data.remote.NetworkError
+import com.example.movielist.data.remote.Result
+import com.example.movielist.data.remote.map
 import com.example.movielist.utils.SortOrder
 
 class MoviesUseCaseImpl(

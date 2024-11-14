@@ -1,16 +1,16 @@
-package com.example.movielist.koin
+package com.example.movielist.di
 
-import com.example.movielist.network.APIService
+import com.example.movielist.data.remote.APIService
 import com.example.movielist.listofmovies.data.remote.RemoteDataSource
 import com.example.movielist.listofmovies.data.remote.RemoteDataSourceImpl
-import com.example.movielist.network.RetrofitInstance
+import com.example.movielist.data.remote.RetrofitService
 import org.koin.core.module.dsl.bind
 import org.koin.core.module.dsl.singleOf
 import org.koin.dsl.module
 
 val networkModule = module {
 
-    single<APIService> { RetrofitInstance.retrofitService }
+    single<APIService> { RetrofitService.retrofitService }
 
     singleOf(::RemoteDataSourceImpl) { bind<RemoteDataSource>() }
 }

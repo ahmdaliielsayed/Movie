@@ -1,11 +1,11 @@
 package com.example.movielist
 
 import android.app.Application
-import com.example.movielist.koin.localModules
-import com.example.movielist.koin.networkModule
-import com.example.movielist.koin.repositoriesModule
-import com.example.movielist.koin.useCaseModules
-import com.example.movielist.koin.viewModelsModule
+import com.example.movielist.di.localModules
+import com.example.movielist.di.networkModule
+import com.example.movielist.di.repositoriesModule
+import com.example.movielist.di.useCaseModules
+import com.example.movielist.di.viewModelsModule
 import com.example.movielist.utils.Constants.API_KEY
 import com.example.movielist.utils.Constants.BASE_URL
 import com.example.movielist.utils.Constants.IMAGE_URL

@@ -1,4 +1,4 @@
-package com.example.movielist.network
+package com.example.movielist.data.remote
 
 import com.example.movielist.utils.Constants.API_KEY
 import com.example.movielist.utils.Constants.BASE_URL
@@ -9,7 +9,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-object RetrofitInstance {
+object RetrofitService {
 
     private val requestInterceptor = Interceptor { chain ->
         val url = chain.request()

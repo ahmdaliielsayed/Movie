@@ -1,4 +1,4 @@
-package com.example.movielist.listofmovies.domain.utils
+package com.example.movielist.data.remote
 
 typealias DomainError = Error
 

@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.movielist.databinding.RowMovieBinding
-import com.example.movielist.listofmovies.data.dto.Movie
+import com.example.movielist.domain.dto.Movie
 import com.example.movielist.utils.Constants.EMPTY
 import com.example.movielist.utils.loadImage
 

@@ -32,6 +32,6 @@
         tools:layout="@layout/fragment_movie_details" >
         <argument
             android:name="movieDetails"
-            app:argType="com.example.movielist.moviedetails.domain.MovieDetails" />
+            app:argType="com.example.movielist.domain.dto.MovieDetails" />
     </fragment>
 </navigation>

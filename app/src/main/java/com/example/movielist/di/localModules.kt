@@ -1,4 +1,4 @@
-package com.example.movielist.koin
+package com.example.movielist.di
 
 import org.koin.dsl.module
 
