@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/row_movie"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dimen_200"
+    android:layout_gravity="start"
+    android:layout_margin="@dimen/dimen_8"
+    android:backgroundTint="@color/white"
+    app:cardCornerRadius="@dimen/dimen_8">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/dimen_8">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/img_movie_poster"
+            android:layout_width="@dimen/dimen_150"
+            android:layout_height="0dp"
+            android:src="@drawable/loading"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:riv_corner_radius="@dimen/dimen_8"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/txt_rating"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:layout_marginEnd="@dimen/dimen_20"
+            android:background="@drawable/round_black_background"
+            android:paddingStart="@dimen/dimen_8"
+            android:paddingTop="@dimen/dimen_4"
+            android:paddingEnd="@dimen/dimen_8"
+            android:paddingBottom="@dimen/dimen_4"
+            android:textColor="@color/platinum"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/img_movie_poster"
+            app:layout_constraintTop_toTopOf="@id/img_movie_poster"
+            tools:text="9.9" />
+
+        <TextView
+            android:id="@+id/txt_movie_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_8"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:layout_marginEnd="@dimen/dimen_8"
+            android:textColor="@color/dark"
+            android:textSize="@dimen/text_dimen_16"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/img_movie_poster"
+            app:layout_constraintTop_toTopOf="@id/img_movie_poster"
+            tools:text="Film name" />
+
+        <TextView
+            android:id="@+id/txt_release_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:gravity="end"
+            android:textColor="@color/violet_blue"
+            android:textSize="@dimen/text_dimen_16"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/txt_movie_name"
+            app:layout_constraintTop_toBottomOf="@id/txt_movie_name"
+            tools:text="Release date" />
+
+        <ImageView
+            android:id="@+id/img_favorite"
+            android:layout_width="@dimen/dimen_48"
+            android:layout_height="@dimen/dimen_48"
+            android:layout_marginBottom="@dimen/dimen_8"
+            android:src="@drawable/empty_heart"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/txt_release_date"
+            tools:ignore="ContentDescription" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

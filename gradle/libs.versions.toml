@@ -16,6 +16,9 @@ glide = "4.16.0"
 room = "2.6.1"
 kapt = "1.9.24"
 koin = "4.0.0"
+okhttp = "4.12.0"
+lottie = "6.6.0"
+roundedimageview = "2.3.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -39,6 +42,11 @@ koin-gradle-plugin = { group = "io.insert-koin", name = "koin-gradle-plugin", ve
 koin-android = { group = "io.insert-koin", name = "koin-android", version.ref = "koin" }
 koin-test-junit4 = { group = "io.insert-koin", name = "koin-test-junit4", version.ref = "koin" }
 koin-test = { group = "io.insert-koin", name = "koin-test", version.ref = "koin" }
+okhttp-bom = { group = "com.squareup.okhttp3", name = "okhttp-bom", version.ref = "okhttp" }
+okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
+logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
+lottie = { group = "com.airbnb.android", name = "lottie", version.ref = "lottie" }
+roundedimageview = { group = "com.makeramen", name = "roundedimageview", version.ref = "roundedimageview" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

@@ -1,8 +1,8 @@
 package com.example.movielist
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
+import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import com.example.movielist.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -15,20 +15,11 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Example of a call to a native method
-        binding.sampleText.text = stringFromJNI()
+        setupToolbar()
     }
 
-    /**
-     * A native method that is implemented by the 'movielist' native library,
-     * which is packaged with this application.
-     */
-    external fun stringFromJNI(): String
-
-    companion object {
-        // Used to load the 'movielist' library on application startup.
-        init {
-            System.loadLibrary("movielist")
-        }
+    private fun setupToolbar() {
+        setSupportActionBar(binding.appBarHome.toolbar)
+        binding.appBarHome.toolbar.visibility = View.GONE
     }
 }
