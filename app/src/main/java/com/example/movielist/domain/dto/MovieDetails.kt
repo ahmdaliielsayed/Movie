@@ -1,13 +1,14 @@
-package com.example.movielist.moviedetails.domain
+package com.example.movielist.domain.dto
 
 import android.os.Parcelable
 import androidx.room.PrimaryKey
+import com.example.movielist.utils.Constants.ONE
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class MovieDetails(
     @PrimaryKey
-    val id: Int?,
+    val id: Int? = ONE,
     val originalLanguage: String?,
     val overview: String?,
     val posterPath: String?,

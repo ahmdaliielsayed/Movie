@@ -1,6 +1,6 @@
-package com.example.movielist.network
+package com.example.movielist.data.remote
 
-import com.example.movielist.listofmovies.data.dto.MovieResponse
+import com.example.movielist.domain.dto.MovieResponse
 import com.example.movielist.utils.SortOrder
 import com.example.movielist.utils.Constants.EMPTY
 import com.example.movielist.utils.Constants.LOCALE_EN_US

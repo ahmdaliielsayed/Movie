@@ -1,8 +1,8 @@
-package com.example.movielist.listofmovies.domain.usecase
+package com.example.movielist.domain.usecases
 
-import com.example.movielist.listofmovies.data.dto.Movie
-import com.example.movielist.listofmovies.domain.utils.NetworkError
-import com.example.movielist.listofmovies.domain.utils.Result
+import com.example.movielist.domain.dto.Movie
+import com.example.movielist.data.remote.NetworkError
+import com.example.movielist.data.remote.Result
 import com.example.movielist.utils.SortOrder
 
 interface MoviesUseCase {

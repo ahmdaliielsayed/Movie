@@ -1,6 +1,6 @@
 package com.example.movielist.listofmovies.domain.repository
 
-import com.example.movielist.listofmovies.data.dto.MovieResponse
+import com.example.movielist.domain.dto.MovieResponse
 import com.example.movielist.utils.SortOrder
 import retrofit2.Response
 

@@ -1,7 +1,5 @@
-package com.example.movielist.network
+package com.example.movielist.data.remote
 
-import com.example.movielist.listofmovies.domain.utils.NetworkError
-import com.example.movielist.listofmovies.domain.utils.Result
 import com.google.gson.JsonParseException
 import kotlinx.coroutines.ensureActive
 import retrofit2.Response

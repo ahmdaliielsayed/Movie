@@ -1,7 +1,5 @@
-package com.example.movielist.network
+package com.example.movielist.data.remote
 
-import com.example.movielist.listofmovies.domain.utils.NetworkError
-import com.example.movielist.listofmovies.domain.utils.Result
 import com.example.movielist.utils.Constants.HTTP_REQUEST_TIMEOUT
 import com.example.movielist.utils.Constants.HTTP_SERVER_ERROR_RANGE
 import com.example.movielist.utils.Constants.HTTP_TOO_MANY_REQUESTS

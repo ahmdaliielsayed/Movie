@@ -2,11 +2,11 @@ package com.example.movielist.listofmovies.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.movielist.listofmovies.data.dto.Movie
-import com.example.movielist.listofmovies.domain.usecase.MoviesUseCase
-import com.example.movielist.listofmovies.domain.utils.onError
-import com.example.movielist.listofmovies.domain.utils.onSuccess
-import com.example.movielist.moviedetails.domain.MovieDetails
+import com.example.movielist.domain.dto.Movie
+import com.example.movielist.domain.usecases.MoviesUseCase
+import com.example.movielist.data.remote.onError
+import com.example.movielist.data.remote.onSuccess
+import com.example.movielist.domain.dto.MovieDetails
 import com.example.movielist.utils.SortOrder
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow

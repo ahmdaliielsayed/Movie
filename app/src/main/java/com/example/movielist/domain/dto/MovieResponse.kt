@@ -1,4 +1,4 @@
-package com.example.movielist.listofmovies.data.dto
+package com.example.movielist.domain.dto
 
 import com.google.gson.annotations.SerializedName
 

@@ -1,7 +1,7 @@
-package com.example.movielist.koin
+package com.example.movielist.di
 
-import com.example.movielist.listofmovies.domain.usecase.MoviesUseCase
-import com.example.movielist.listofmovies.domain.usecase.MoviesUseCaseImpl
+import com.example.movielist.domain.usecases.MoviesUseCase
+import com.example.movielist.domain.usecases.MoviesUseCaseImpl
 import org.koin.core.module.dsl.bind
 import org.koin.core.module.dsl.factoryOf
 import org.koin.dsl.module

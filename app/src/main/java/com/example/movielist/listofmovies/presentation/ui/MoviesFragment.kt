@@ -12,7 +12,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.movielist.R
 import com.example.movielist.databinding.FragmentMoviesBinding
-import com.example.movielist.listofmovies.data.dto.Movie
+import com.example.movielist.domain.dto.Movie
 import com.example.movielist.listofmovies.presentation.viewmodel.MoviesViewModel
 import com.example.movielist.utils.collect
 import org.koin.androidx.viewmodel.ext.android.viewModel
