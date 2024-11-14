@@ -64,6 +64,9 @@ dependencies {
     implementation(libs.gson)
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
+    implementation(platform(libs.okhttp.bom))
+    implementation(libs.okhttp)
+    implementation(libs.logging.interceptor)
 
     implementation(libs.glide)
     implementation(libs.androidx.room.ktx)
@@ -75,4 +78,8 @@ dependencies {
     implementation(libs.koin.android)
     implementation(libs.koin.test.junit4)
     implementation(libs.koin.test)
+
+    implementation(libs.lottie)
+
+    implementation(libs.roundedimageview)
 }

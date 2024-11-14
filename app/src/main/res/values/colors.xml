@@ -7,4 +7,14 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="tool_bar_color">#6750A4</color>
+    <color name="dark">#141A26</color>
+    <color name="fire_fly">#355862</color>
+    <color name="white_lilac">#141A26</color>
+    <color name="electric_violet">#8E00FE</color>
+    <color name="violet_blue">#6200AF</color>
+    <color name="ebony_clay">#28303D</color>
+    <color name="platinum">#E7E7E7</color>
+    <color name="cool_grey">#9BA0A6</color>
 </resources>
