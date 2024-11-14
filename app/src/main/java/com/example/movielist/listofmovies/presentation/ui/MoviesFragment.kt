@@ -14,6 +14,7 @@ import com.example.movielist.R
 import com.example.movielist.databinding.FragmentMoviesBinding
 import com.example.movielist.domain.dto.Movie
 import com.example.movielist.listofmovies.presentation.viewmodel.MoviesViewModel
+import com.example.movielist.utils.ConnectionLiveData
 import com.example.movielist.utils.collect
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -43,7 +44,6 @@ class MoviesFragment : Fragment() {
 
         showToolbar()
         setupRecyclerView()
-        viewModel.getMovies()
         setupObservers()
     }
 
@@ -93,10 +93,23 @@ class MoviesFragment : Fragment() {
         collect(viewModel.errorMessage, ::showError)
         collect(viewModel.isInsertedSuccessfully, ::getInsertResult)
         collect(viewModel.isDeletedSuccessfully, ::getDeleteResult)
+
+        ConnectionLiveData(requireContext()).observe(viewLifecycleOwner) {
+            if (it && viewModel.moviesList.value.isEmpty()) {
+                viewModel.getMovies()
+            } else if (it && viewModel.moviesList.value.isNotEmpty()) {
+                binding?.moviesRecyclerView?.visibility = View.VISIBLE
+                binding?.animationNoDataAvailable?.visibility = View.GONE
+            } else {
+                binding?.moviesRecyclerView?.visibility = View.GONE
+                binding?.animationNoDataAvailable?.visibility = View.VISIBLE
+            }
+        }
     }
 
     private fun renderMovies(moviesList: List<Movie>?) {
         moviesAdapter.setMovies(moviesList ?: emptyList())
+        binding?.moviesRecyclerView?.visibility = View.VISIBLE
         binding?.animationNoDataAvailable?.visibility = View.GONE
     }
 
@@ -107,6 +120,7 @@ class MoviesFragment : Fragment() {
     private fun showError(errorMsg: String?) {
         errorMsg?.let {
             Toast.makeText(context, it, Toast.LENGTH_SHORT).show()
+            binding?.moviesRecyclerView?.visibility = View.GONE
             binding?.animationNoDataAvailable?.visibility = View.VISIBLE
         }
     }
