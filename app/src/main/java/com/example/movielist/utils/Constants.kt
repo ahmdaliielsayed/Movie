@@ -6,6 +6,8 @@ object Constants {
     lateinit var IMAGE_URL: String
     lateinit var API_KEY: String
 
+    const val NEGATIVE_ONE_LONG = -1L
+    const val ZERO = 0
     const val ONE = 1
 
     const val HTTP_REQUEST_TIMEOUT = 408

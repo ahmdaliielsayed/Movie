@@ -5,4 +5,8 @@
     <string name="vote_count">Vote Count:</string>
     <string name="movies_screen">Movies Screen</string>
     <string name="details_screen">Details Screen</string>
+    <string name="inserted_successfully">Added Successfully!</string>
+    <string name="insertion_failed">Failed!</string>
+    <string name="deleted_successfully">Deleted Successfully!</string>
+    <string name="deletion_failed">Failed!</string>
 </resources>

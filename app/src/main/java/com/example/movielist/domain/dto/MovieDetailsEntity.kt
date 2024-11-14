@@ -1,12 +1,14 @@
 package com.example.movielist.domain.dto
 
 import android.os.Parcelable
+import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.example.movielist.utils.Constants.ONE
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class MovieDetails(
+@Entity(tableName = "movies")
+data class MovieDetailsEntity(
     @PrimaryKey
     val id: Int? = ONE,
     val originalLanguage: String?,
@@ -15,5 +17,6 @@ data class MovieDetails(
     val releaseDate: String?,
     val title: String?,
     val voteAverage: Double?,
-    val voteCount: Int?
+    val voteCount: Int?,
+    var isFavorite: Boolean = false
 ): Parcelable

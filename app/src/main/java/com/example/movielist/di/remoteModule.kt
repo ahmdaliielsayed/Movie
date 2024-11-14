@@ -8,7 +8,7 @@ import org.koin.core.module.dsl.bind
 import org.koin.core.module.dsl.singleOf
 import org.koin.dsl.module
 
-val networkModule = module {
+val remoteModule = module {
 
     single<APIService> { RetrofitService.retrofitService }
 

@@ -76,6 +76,7 @@
             android:layout_width="@dimen/dimen_48"
             android:layout_height="@dimen/dimen_48"
             android:layout_marginBottom="@dimen/dimen_8"
+            android:padding="@dimen/dimen_8"
             android:src="@drawable/empty_heart"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/txt_release_date"
