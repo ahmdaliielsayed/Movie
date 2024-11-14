@@ -17,5 +17,6 @@ object Constants {
     const val SPLASH_TIME_OUT: Long = 3000
 
     const val EMPTY = ""
+    const val SPACE = " "
     const val LOCALE_EN_US = "en-US"
 }

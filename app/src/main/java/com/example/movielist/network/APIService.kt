@@ -1,4 +1,4 @@
-package com.example.movielist.listofmovies.data.network
+package com.example.movielist.network
 
 import com.example.movielist.listofmovies.data.dto.MovieResponse
 import com.example.movielist.utils.SortOrder

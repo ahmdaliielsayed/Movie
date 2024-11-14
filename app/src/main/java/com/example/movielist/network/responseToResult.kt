@@ -1,4 +1,4 @@
-package com.example.movielist.listofmovies.data.network
+package com.example.movielist.network
 
 import com.example.movielist.listofmovies.domain.utils.NetworkError
 import com.example.movielist.listofmovies.domain.utils.Result

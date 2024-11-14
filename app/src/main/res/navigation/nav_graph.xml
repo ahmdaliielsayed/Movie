@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.example.movielist.splash.SplashFragment"
+        android:name="com.example.movielist.splash.presentation.ui.SplashFragment"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash" >
         <action
@@ -20,5 +20,18 @@
         android:id="@+id/moviesFragment"
         android:name="com.example.movielist.listofmovies.presentation.ui.MoviesFragment"
         android:label="fragment_movies"
-        tools:layout="@layout/fragment_movies" />
+        tools:layout="@layout/fragment_movies" >
+        <action
+            android:id="@+id/action_moviesFragment_to_movieDetailsFragment"
+            app:destination="@id/movieDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/movieDetailsFragment"
+        android:name="com.example.movielist.moviedetails.presentation.ui.MovieDetailsFragment"
+        android:label="fragment_movie_details"
+        tools:layout="@layout/fragment_movie_details" >
+        <argument
+            android:name="movieDetails"
+            app:argType="com.example.movielist.moviedetails.domain.MovieDetails" />
+    </fragment>
 </navigation>
